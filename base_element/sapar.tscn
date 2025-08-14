@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd14e8nxealyr"]
+
+[ext_resource type="Script" uid="uid://dqbou35hes2xx" path="res://base_element/sapar.gd" id="1_kihv0"]
+
+[node name="sapar" type="Node2D"]
+script = ExtResource("1_kihv0")
+
+[node name="lines" type="Node2D" parent="."]

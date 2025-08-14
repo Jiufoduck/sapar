@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7fdo7mu62ot"]
+
+[ext_resource type="Script" uid="uid://lm74elli87dy" path="res://base_element/player.gd" id="1_bdso4"]
+[ext_resource type="Texture2D" uid="uid://cypue5txkd1nv" path="res://pic/ballBlue_10.png" id="2_gbf32"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddwvm"]
+radius = 41.0
+height = 136.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2147483648
+motion_mode = 1
+script = ExtResource("1_bdso4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ddwvm")
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.59, 0.93)
+texture = ExtResource("2_gbf32")

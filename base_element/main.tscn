@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmeje5gp2wvir"]
+
+[ext_resource type="Script" uid="uid://ct0pjsotp1kws" path="res://base_element/main.gd" id="1_1mkjp"]
+[ext_resource type="PackedScene" uid="uid://dd14e8nxealyr" path="res://base_element/sapar.tscn" id="2_8xjy2"]
+[ext_resource type="PackedScene" uid="uid://csk5occwrdvvn" path="res://Enemy/walker.tscn" id="2_gjn4q"]
+[ext_resource type="PackedScene" uid="uid://cd7fdo7mu62ot" path="res://base_element/player.tscn" id="3_gjn4q"]
+
+[node name="main" type="Node2D" node_paths=PackedStringArray("player", "sapar", "Enemy_base")]
+script = ExtResource("1_1mkjp")
+player = NodePath("Player")
+sapar = NodePath("sapar")
+Enemy_base = NodePath("Enemys")
+
+[node name="Enemys" type="Node2D" parent="."]
+
+[node name="Walker" parent="Enemys" instance=ExtResource("2_gjn4q")]
+position = Vector2(1124, 550)
+
+[node name="sapar" parent="." instance=ExtResource("2_8xjy2")]
+
+[node name="Player" parent="." instance=ExtResource("3_gjn4q")]

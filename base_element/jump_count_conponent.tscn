@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqcu5auaskns"]
+
+[ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/PixelBoxMonospace.ttf" id="1_ab246"]
+[ext_resource type="Script" uid="uid://cmosd6my4qnab" path="res://base_element/jump_count_conponent.gd" id="1_fqfxk"]
+
+[node name="JumpCountConponent" type="RichTextLabel"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/bold_font = ExtResource("1_ab246")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("1_fqfxk")
+
+[node name="fade" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="fade" to="." method="_on_fade_timeout"]
