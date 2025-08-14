@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var vel = (player.velocity/1.2+offset*Player_speed)
 
 	player.velocity = vel.normalized() * clamp(vel.length(),0,Max_speed)
-	sapar.position = sapar.position.move_toward(player.position,10)
+	sapar.position = sapar.position.move_toward(player.position,(player.position - sapar.position).length()/10)
 	player.move_and_slide()
 	PlayerData.player_pos = $Player.position
 
@@ -31,4 +31,5 @@ func _physics_process(delta: float) -> void:
 	for i in Enemy_base.get_children():
 		if i.current_state == EnemyBase.State.Idle or i.current_state == EnemyBase.State.OnAttack:
 			var damage_time = $sapar.sapar_check(i)
-			i.take_damage(damage_time)
+			if damage_time:
+				i.take_damage(damage_time)

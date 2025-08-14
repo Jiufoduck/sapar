@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name EnemyBase
 
-enum State{Spawning,Idle,OnAttack,Dying}
+enum State{Spawning,Idle,Grabled,OnAttack,Dying}
 var current_state:State = State.Spawning
 
 var last_position = Vector2.ZERO
