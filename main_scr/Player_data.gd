@@ -14,6 +14,10 @@ var target_enemy = []
 var player_strength = 2
 
 #loots
+var critical_ring = false
+
+var double_rate = 1.0
+
 var sheild:bool = false
 var sheild_value = 2.0
 

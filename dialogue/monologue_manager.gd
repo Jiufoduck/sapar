@@ -6,6 +6,8 @@ var is_playing: bool = false
 var current_line_index: int = 0
 @onready var timer: Timer = $Timer
 
+func _ready() -> void:
+	ScriptManager.connect("add_monologue",play_monologue)
 
 func play_monologue(monologue: Monologue, is_instance:bool, is_force:bool):
 	if is_playing:

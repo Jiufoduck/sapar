@@ -12,8 +12,6 @@ var current_state:State = State.Spawning
 
 var last_position = Vector2.ZERO
 
-var example = {"MaxHealth":10,"Attack":1}
-
 var level = 0
 @export var attribute_configuration:Array[Dictionary]
 #分为3级，每集不同配置表
@@ -29,6 +27,9 @@ func _ready() -> void:
 
 	last_position = position
 
+func _physics_process(delta: float) -> void:
+	velocity *= GameGlobal.time_scale
+
 
 func spawn():
 	var config = attribute_configuration[level]
@@ -38,8 +39,17 @@ func spawn():
 
 	health = MaxHealth
 	$HP.initialize(MaxHealth)
-	current_state = State.Idle
 
+	$caution.show()
+	await get_tree().create_timer(0.2).timeout
+	$caution.hide()
+	await get_tree().create_timer(0.2).timeout
+	$caution.show()
+	await get_tree().create_timer(0.2).timeout
+	$caution.hide()
+	await create_tween().set_trans(Tween.TRANS_SINE).tween_property($sprite,"scale",Vector2(0.2,0.2),0.5).finished
+
+	current_state = State.Idle
 
 func golden():
 	is_golden = true
@@ -47,8 +57,8 @@ func golden():
 func take_damage(count:int):
 	$HP.show()
 	for i in count:
-		var damage = PlayerData.player_strength
-		if !(randi()%10):
+		var damage:int = PlayerData.player_strength * PlayerData.double_rate
+		if PlayerData.critical_ring and !(randi()%10):
 			damage*=2
 			$JumpCountConponent.jump(str(damage),true)
 		else:

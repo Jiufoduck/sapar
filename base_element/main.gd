@@ -12,7 +12,7 @@ const Gold_scene:PackedScene = preload("res://base_element/gold.tscn")
 
 
 func _ready() -> void:
-	pass
+	$enemys/Walker.spawn()
 
 func _physics_process(delta: float) -> void:
 	sapar.position = sapar.position.move_toward(player.position,(player.position - sapar.position).length()/5)
@@ -33,8 +33,8 @@ func collect_gold():
 		i.clear()
 
 func _on_spawn_enemy(pos:Vector2,obj:EnemyBase):
-	$enemys.call_deferred("add_child",obj)
 	obj.position = pos
+	$enemys.add_child(obj)
 	obj.spawn()
 
 
@@ -51,11 +51,6 @@ func _spawn_gold(pos):
 
 
 
-func _send_script(path:String,is_instance:bool,is_force:bool,type:String):
-	if type == "mono":
-		MonoManager.play_monologue(load(path),is_instance,is_force)
-	else:
-		DiaManager.add_json(path,is_instance,is_force)
 
 
 func _on_player_take_damage(damage:int) -> void:

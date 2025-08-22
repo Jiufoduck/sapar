@@ -14,7 +14,7 @@ func _ready() -> void:
 
 	await get_tree().create_timer(0.1).timeout
 
-	send_script.emit("res://dialogue/dialogue_jsons/start/start1.json",false,false,"dia")
+	ScriptManager._send_dialogue("res://dialogue/dialogue_jsons/start/start1.json",false,false)
 
 	script_timer.start(7)#7
 	await script_timer.timeout
@@ -28,7 +28,7 @@ func _ready() -> void:
 	script_timer.start(1)
 	await script_timer.timeout
 
-	send_script.emit("res://dialogue/monologue_resource/start/start1.tres",false,false,"mono")
+	ScriptManager._send_monologue("res://dialogue/monologue_resource/start/start1.tres",false,false)
 
 
 
@@ -55,7 +55,7 @@ func _on_enemy_dead(obj):
 
 func _level_clear():
 	if enemies_index == 1:
-		send_script.emit("res://dialogue/dialogue_jsons/start/start2.json",false,true,"dia")
+		ScriptManager._send_dialogue("res://dialogue/dialogue_jsons/start/start2.json",false,true)
 		script_timer.start(5)
 		await script_timer.timeout
 		PlayerData.set_sapar([70,110,130])
@@ -64,10 +64,10 @@ func _level_clear():
 		load_turn_enemy()
 	elif enemies_index == 2:
 		level_clear.emit()
-		send_script.emit("res://dialogue/dialogue_jsons/start/start3.json",false,true,"dia")
+		ScriptManager._send_dialogue("res://dialogue/dialogue_jsons/start/start3.json",false,true)
 		script_timer.start(2)
 		await script_timer.timeout
-		send_script.emit("res://dialogue/monologue_resource/start/start2.tres",false,false,"mono")
+		ScriptManager._send_monologue("res://dialogue/monologue_resource/start/start2.tres",false,false)
 
 func open_door():
 	$exit.queue_free()

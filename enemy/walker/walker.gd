@@ -3,7 +3,7 @@ class_name Walker
 
 signal hurt
 
-var damp = 2
+var damp = 1.1
 var heal_strength = 1
 @onready var HpBar = %HP
 
@@ -21,7 +21,6 @@ func golden():
 
 
 func spawn():
-	super()
 	match level:
 		0:
 			$sprite.modulate = Color.WHITE
@@ -30,12 +29,13 @@ func spawn():
 		2:
 			$sprite.modulate = Color.RED
 
-	$heal.wait_time = recover_interval
-	await create_tween().set_trans(Tween.TRANS_SINE).tween_property(self,"scale",Vector2.ONE,0.5).finished
+	await super()
 
+	$heal.wait_time = recover_interval
 
 func _physics_process(delta: float) -> void:
 	velocity /= damp
+	super(delta)
 	move_and_slide()
 
 var repulsion_strength = 100

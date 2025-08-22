@@ -16,7 +16,6 @@ func _ready() -> void:
 
 	level.connect("level_clear",_on_level_clear)
 	level.connect("spawn_enemy",main._on_spawn_enemy)
-	level.connect("send_script",main._send_script)
 	add_child(level)
 	now_level = level
 
@@ -39,7 +38,6 @@ func change_level():
 		new_level.connect("spawn_enemy",main._on_spawn_enemy)
 		new_level = level_fight[fight_level_index].instantiate()
 		fight_level_index += 1
-	new_level.connect("send_script",main._send_script)
 	new_level.connect("level_clear",_on_level_clear)
 	add_child(new_level)
 	#清除关卡

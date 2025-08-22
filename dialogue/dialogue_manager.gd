@@ -17,7 +17,7 @@ var current_message_index = 0
 var reaching_summit = false
 
 func _ready():
-	pass
+	ScriptManager.add_dialogue.connect(add_json)
 
 
 func _process(delta: float) -> void:

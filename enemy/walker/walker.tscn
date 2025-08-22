@@ -7,7 +7,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ld2nx"]
 
 [node name="Walker" instance=ExtResource("1_grwvq")]
-scale = Vector2(1e-05, 1e-05)
 script = ExtResource("2_ld2nx")
 recover_interval = 2.0
 attribute_configuration = Array[Dictionary]([{
@@ -26,23 +25,21 @@ attribute_configuration = Array[Dictionary]([{
 MaxHealth = 10
 Attack = 1
 
-[node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("CircleShape2D_ld2nx")
-
-[node name="sprite" type="Sprite2D" parent="." index="1"]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.2, 0.2)
+[node name="sprite" parent="." index="0"]
 texture = ExtResource("2_c7602")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_ld2nx")
 
 [node name="JumpCountConponent" parent="." index="2"]
 offset_left = 0.0
 offset_bottom = 0.0
 
-[node name="HP" parent="." index="3"]
+[node name="heal" type="Timer" parent="." index="3"]
+wait_time = 2.0
+
+[node name="HP" parent="." index="4"]
 unique_name_in_owner = true
 visible = false
-
-[node name="heal" type="Timer" parent="." index="4"]
-wait_time = 2.0
 
 [connection signal="timeout" from="heal" to="." method="_on_heal_timeout"]

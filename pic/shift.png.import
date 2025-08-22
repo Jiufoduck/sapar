@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://befx8w411tfg"
-path="res://.godot/imported/icons8-attack-50.png-37d4b40b1f3414fcf7902db72f0bf9a9.ctex"
+uid="uid://bpxew6btyrwjr"
+path="res://.godot/imported/shift.png-5c40f65d4e4d625b18f5513326f053ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/icons8-attack-50.png"
-dest_files=["res://.godot/imported/icons8-attack-50.png-37d4b40b1f3414fcf7902db72f0bf9a9.ctex"]
+source_file="res://pic/shift.png"
+dest_files=["res://.godot/imported/shift.png-5c40f65d4e4d625b18f5513326f053ee.ctex"]
 
 [params]
 

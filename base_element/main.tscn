@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://bmeje5gp2wvir"]
+[gd_scene load_steps=27 format=3 uid="uid://bmeje5gp2wvir"]
 
 [ext_resource type="Script" uid="uid://ct0pjsotp1kws" path="res://base_element/main.gd" id="1_1mkjp"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_1e1p8"]
 [ext_resource type="PackedScene" uid="uid://dd14e8nxealyr" path="res://base_element/sapar.tscn" id="2_8xjy2"]
+[ext_resource type="PackedScene" uid="uid://csk5occwrdvvn" path="res://enemy/walker/walker.tscn" id="3_a456m"]
 [ext_resource type="PackedScene" uid="uid://cd7fdo7mu62ot" path="res://base_element/player.tscn" id="3_gjn4q"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_q6855"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_1e1p8"]
@@ -13,13 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://coxmonfpfe4bh" path="res://pic/history.png" id="11_ce18j"]
 [ext_resource type="Texture2D" uid="uid://cxy4ghexgc06t" path="res://pic/history_press.png" id="12_6tw1v"]
 [ext_resource type="Texture2D" uid="uid://cqxutpk3ccvns" path="res://pic/history_float.png" id="13_nkhoc"]
-[ext_resource type="Texture2D" uid="uid://dfv0e6do3ycd2" path="res://pic/icons8-message-50 2.png" id="14_ce18j"]
+[ext_resource type="Texture2D" uid="uid://dfv0e6do3ycd2" path="res://pic/message.png" id="14_ce18j"]
 [ext_resource type="Script" uid="uid://dueojsmqgr3wa" path="res://base_element/combat_ui.gd" id="15_pa7vq"]
 [ext_resource type="Texture2D" uid="uid://b2ej5vut6yxvg" path="res://pic/HP_Bar/bg.png" id="16_1v3ad"]
 [ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/PixelBoxMonospace.ttf" id="16_ruib1"]
 [ext_resource type="Texture2D" uid="uid://ceyxir6p2ljg5" path="res://pic/HP_Bar/red.png" id="17_1v3ad"]
 [ext_resource type="Texture2D" uid="uid://eca7s3iia6lx" path="res://pic/HP_Bar/blue.png" id="18_ruib1"]
-[ext_resource type="Texture2D" uid="uid://befx8w411tfg" path="res://pic/icons8-attack-50.png" id="21_a456m"]
+[ext_resource type="Texture2D" uid="uid://befx8w411tfg" path="res://pic/attack.png" id="21_a456m"]
 [ext_resource type="Texture2D" uid="uid://dfg2sbhc2hmx2" path="res://pic/Coin.png" id="21_i1oh8"]
 
 [sub_resource type="Resource" id="Resource_ovjmg"]
@@ -49,6 +50,7 @@ Enemy_base = NodePath("enemys")
 
 [node name="Camera" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
+position = Vector2(-104, 40)
 zoom = Vector2(2, 2)
 process_callback = 0
 
@@ -62,12 +64,16 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="enemys" type="Node2D" parent="."]
 
+[node name="Walker" parent="enemys" instance=ExtResource("3_a456m")]
+
 [node name="sapar" parent="." instance=ExtResource("2_8xjy2")]
 
 [node name="Player" parent="." instance=ExtResource("3_gjn4q")]
+position = Vector2(-104, 40)
 
 [node name="PCam" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
+position = Vector2(-104, 40)
 script = ExtResource("5_q6855")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -197,27 +203,27 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("15_pa7vq")
 
-[node name="MarginContainer" type="MarginContainer" parent="Dialogs/CombatUI"]
+[node name="State" type="MarginContainer" parent="Dialogs/CombatUI"]
 layout_mode = 1
 offset_right = 516.0
 offset_bottom = 79.0
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialogs/CombatUI/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogs/CombatUI/State"]
 layout_mode = 2
 
-[node name="HP" type="HBoxContainer" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer"]
+[node name="HP" type="HBoxContainer" parent="Dialogs/CombatUI/State/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/HP"]
+[node name="Label" type="Label" parent="Dialogs/CombatUI/State/VBoxContainer/HP"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.253843, 0.253843, 0.253843, 1)
 theme_override_fonts/font = ExtResource("16_ruib1")
 theme_override_font_sizes/font_size = 50
 text = "HP"
 
-[node name="HP" type="TextureProgressBar" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/HP"]
+[node name="HP" type="TextureProgressBar" parent="Dialogs/CombatUI/State/VBoxContainer/HP"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 10.0
@@ -228,7 +234,7 @@ stretch_margin_right = 150
 texture_under = ExtResource("16_1v3ad")
 texture_progress = ExtResource("17_1v3ad")
 
-[node name="Shield" type="TextureProgressBar" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/HP"]
+[node name="Shield" type="TextureProgressBar" parent="Dialogs/CombatUI/State/VBoxContainer/HP"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -241,26 +247,26 @@ texture_under = ExtResource("16_1v3ad")
 texture_progress = ExtResource("18_ruib1")
 tint_progress = Color(0, 1, 0, 1)
 
-[node name="Gold" type="HBoxContainer" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer"]
+[node name="Gold" type="HBoxContainer" parent="Dialogs/CombatUI/State/VBoxContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/Gold"]
+[node name="icon" type="TextureRect" parent="Dialogs/CombatUI/State/VBoxContainer/Gold"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("21_i1oh8")
 expand_mode = 1
 
-[node name="gold_aomout" type="Label" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/Gold"]
+[node name="gold_aomout" type="Label" parent="Dialogs/CombatUI/State/VBoxContainer/Gold"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("16_ruib1")
 theme_override_font_sizes/font_size = 60
 text = "0"
 
-[node name="Attack" type="HBoxContainer" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer"]
+[node name="Attack" type="HBoxContainer" parent="Dialogs/CombatUI/State/VBoxContainer"]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/Attack"]
+[node name="icon" type="TextureRect" parent="Dialogs/CombatUI/State/VBoxContainer/Attack"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -269,12 +275,17 @@ size_flags_stretch_ratio = 0.0
 texture = ExtResource("21_a456m")
 stretch_mode = 3
 
-[node name="Attack_amount" type="Label" parent="Dialogs/CombatUI/MarginContainer/VBoxContainer/Attack"]
+[node name="Attack_amount" type="Label" parent="Dialogs/CombatUI/State/VBoxContainer/Attack"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("16_ruib1")
 theme_override_font_sizes/font_size = 60
 text = "2"
+
+[node name="cooldown" type="MarginContainer" parent="Dialogs/CombatUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Menu" type="Control" parent="Dialogs"]
 unique_name_in_owner = true
