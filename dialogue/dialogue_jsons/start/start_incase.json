@@ -1,0 +1,10 @@
+{
+  "participants": {
+	"1": "Mir",
+	"2": "Zina"
+  },
+  "messages": [
+	{"sender": "2", "content": "接近那个蛋，靠近一点试试看？", "delay": 5}
+
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "participants": {
+	"1": "Mir",
+	"2": "Zina"
+  },
+  "messages": [
+	{"sender": "2", "content": "OK，你应该理解这个附身物是怎么运作的了吧？", "delay": 3},
+	{"sender": "1", "content": "嗯……还是不太清楚", "delay": 2},
+	{"sender": "2", "content": "不清楚没事，给你升个级你就知道怎么玩了", "delay": 2},
+	{"sender": "1", "content": "啊？", "delay": 2},
+	{"sender": "2", "content": "没错，这下理解了吧，只要你和敌人之间的距离发生较大的变化，你就可以攻击他们", "delay": 1},
+	{"sender": "2", "content": "下一波敌人要来了！预备备～", "delay": 4},
+  ]
+}

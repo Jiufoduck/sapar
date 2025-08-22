@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Monologue" load_steps=2 format=3 uid="uid://bctwsnndhgkba"]
+
+[ext_resource type="Script" uid="uid://btd088t6fkvnb" path="res://dialogue/MonologueResource.gd" id="1_usrr5"]
+
+[resource]
+script = ExtResource("1_usrr5")
+lines = Array[String](["为什么感觉这么憋屈..."])
+interval = 3.0
+metadata/_custom_type_script = "uid://btd088t6fkvnb"

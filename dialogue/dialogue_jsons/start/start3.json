@@ -1,0 +1,9 @@
+{
+  "participants": {
+	"1": "Mir",
+	"2": "Zina"
+  },
+  "messages": [
+	{"sender": "2", "content": "很好！你已经会打了！现在去闯荡吧，我不管你了！", "delay": 5}
+  ]
+}

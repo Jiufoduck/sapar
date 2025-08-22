@@ -25,11 +25,11 @@ func update_points():
 #	if event.is_action_pressed("point"):
 #		push(rad_to_deg(get_local_mouse_position().angle()))
 
-
+var push_strength = 20
 func push(angle):
 	var centre = int(angle/360*fragment)
 	# 使用指数衰减代替固定值（参考材料1的波浪衰减原理）
 	for offset in range(-5, 6):
 		var idx = (centre + offset) % fragment
 		var falloff = exp(-pow(offset, 2) / 8.0) # 高斯衰减曲线
-		points[idx] = points[idx].normalized() * (radius + 100 * falloff)
+		points[idx] = points[idx].normalized() * (radius + push_strength * falloff)

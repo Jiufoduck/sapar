@@ -1,19 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://duj45fjoys5l"]
+[gd_scene load_steps=7 format=3 uid="uid://duj45fjoys5l"]
 
 [ext_resource type="Script" uid="uid://d3wnj3j72sq6k" path="res://base_element/enemy_base.gd" id="1_6emem"]
 [ext_resource type="PackedScene" uid="uid://dcqcu5auaskns" path="res://base_element/jump_count_conponent.tscn" id="2_yqjrs"]
 [ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/PixelBoxMonospace.ttf" id="3_f3d6x"]
+[ext_resource type="Texture2D" uid="uid://ygleyqfpbpug" path="res://pic/_Assets/HPBarOut.png" id="4_6egq7"]
+[ext_resource type="Script" uid="uid://d2jv3b3goxe86" path="res://base_element/Enemy_hp.gd" id="4_pn6c2"]
+[ext_resource type="Texture2D" uid="uid://dteexjwjlq001" path="res://pic/_Assets/HPBarIn.png" id="5_3lhq3"]
 
 [node name="EnemyBase" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2147483648
 motion_mode = 1
 script = ExtResource("1_6emem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="JumpCountConponent" parent="." instance=ExtResource("2_yqjrs")]
-offset_left = -92.0
-offset_top = -126.0
-offset_right = -52.0
-offset_bottom = -86.0
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = 16.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_f3d6x")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="HP" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 27.0
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+min_value = -1.0
+max_value = 11.0
+step = 0.001
+nine_patch_stretch = true
+texture_under = ExtResource("4_6egq7")
+texture_progress = ExtResource("5_3lhq3")
+script = ExtResource("4_pn6c2")

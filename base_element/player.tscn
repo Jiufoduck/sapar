@@ -1,11 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd7fdo7mu62ot"]
+[gd_scene load_steps=7 format=3 uid="uid://cd7fdo7mu62ot"]
 
 [ext_resource type="Script" uid="uid://lm74elli87dy" path="res://base_element/player.gd" id="1_bdso4"]
-[ext_resource type="Texture2D" uid="uid://cypue5txkd1nv" path="res://pic/ballBlue_10.png" id="2_gbf32"]
+[ext_resource type="Texture2D" uid="uid://pf2tb23juulw" path="res://pic/_Assets/Basic Charakter Spritesheet.png" id="2_bdso4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddwvm"]
-radius = 41.0
-height = 136.0
+radius = 12.0
+height = 38.0
+
+[sub_resource type="Animation" id="Animation_bdso4"]
+resource_name = "hit_anim"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.486275), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gbf32"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddwvm"]
+_data = {
+&"RESET": SubResource("Animation_gbf32"),
+&"hit_anim": SubResource("Animation_bdso4")
+}
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2147483648
@@ -15,6 +52,36 @@ script = ExtResource("1_bdso4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ddwvm")
 
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_ddwvm")
+
+[node name="GoldBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoldBox"]
+shape = SubResource("CapsuleShape2D_ddwvm")
+
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.59, 0.93)
-texture = ExtResource("2_gbf32")
+scale = Vector2(2, 2)
+texture = ExtResource("2_bdso4")
+hframes = 4
+vframes = 4
+frame = 4
+
+[node name="HitCDTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="hitanimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ddwvm")
+}
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="GoldBox" to="." method="_on_gold_box_body_entered"]
+[connection signal="timeout" from="HitCDTimer" to="." method="_on_hit_cd_timer_timeout"]

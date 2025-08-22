@@ -1,35 +1,101 @@
 extends Node2D
 
+const Gold_scene:PackedScene = preload("res://base_element/gold.tscn")
+
+@onready var MonoManager = %MonologueManager
+@onready var DiaManager = %DialogueManager
+@onready var CombatUI = %CombatUI
+@onready var Menu = %Menu
 @export var player:CharacterBody2D
 @export var sapar:Sapar
 @export var Enemy_base:Node2D
 
-const Player_speed = 100
-const Max_speed = 500
 
-
+func _ready() -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
-	var offset = Vector2.ZERO
-	if Input.is_action_pressed("right"):
-		offset+= Vector2.RIGHT
-	if Input.is_action_pressed("left"):
-		offset+= Vector2.LEFT
-	if Input.is_action_pressed("up"):
-		offset+= Vector2.UP
-	if Input.is_action_pressed("down"):
-		offset+= Vector2.DOWN
-	var vel = (player.velocity/1.2+offset*Player_speed)
-
-	player.velocity = vel.normalized() * clamp(vel.length(),0,Max_speed)
-	sapar.position = sapar.position.move_toward(player.position,(player.position - sapar.position).length()/10)
-	player.move_and_slide()
+	sapar.position = sapar.position.move_toward(player.position,(player.position - sapar.position).length()/5)
 	PlayerData.player_pos = $Player.position
-
 
 	#Sapar
 	for i in Enemy_base.get_children():
-		if i.current_state == EnemyBase.State.Idle or i.current_state == EnemyBase.State.OnAttack:
-			var damage_time = $sapar.sapar_check(i)
+		if i.current_state == EnemyBase.State.Idle or i.current_state == EnemyBase.State.Grabled:
+			var damage_time = sapar.sapar_check(i)
 			if damage_time:
 				i.take_damage(damage_time)
+
+func game_over():
+	pass
+
+func collect_gold():
+	for i in $golds.get_children():
+		i.clear()
+
+func _on_spawn_enemy(pos:Vector2,obj:EnemyBase):
+	$enemys.call_deferred("add_child",obj)
+	obj.position = pos
+	obj.spawn()
+
+
+func _spawn_gold(pos):
+	var amount = randi_range(2,6) + PlayerData.basis_gold_amount
+	for i in amount:
+		var ins = Gold_scene.instantiate()
+		ins.position = pos
+		$golds.add_child(ins)
+		ins.position = pos
+		ins.random_splash()
+
+
+
+
+
+func _send_script(path:String,is_instance:bool,is_force:bool,type:String):
+	if type == "mono":
+		MonoManager.play_monologue(load(path),is_instance,is_force)
+	else:
+		DiaManager.add_json(path,is_instance,is_force)
+
+
+func _on_player_take_damage(damage:int) -> void:
+	var true_damage = damage
+	if PlayerData.sheild:
+		if true_damage <= PlayerData.sheild_value:
+			_on_shield_take_damage(damage)
+			return
+		else:
+			true_damage -= PlayerData.sheild_value
+			_on_shield_take_damage(PlayerData.sheild_value)
+	if true_damage >= PlayerData.HP:
+		game_over()
+	else:
+		PlayerData.HP -= true_damage
+		CombatUI._on_Hp_changed(PlayerData.HP)
+
+
+
+
+func _on_shield_take_damage(damage:int):
+	if PlayerData.sheild_value >= 2:
+		$ShieldRecoverTimer.start()
+	PlayerData.sheild_value -= damage
+	CombatUI._on_Shield_changed(PlayerData.sheild_value)
+
+
+
+func _on_shield_recover_timer_timeout() -> void:
+	PlayerData.sheild_value += 1
+	CombatUI._on_Shield_changed(PlayerData.sheild_value)
+
+	if PlayerData.sheild_value < 2:
+		$ShieldRecoverTimer.start()
+
+
+func _on_player_take_gold() -> void:
+	PlayerData.golds += 1
+	CombatUI._on_gold_changed(PlayerData.golds)
+
+func _on_attack_changed(val):
+	%CombatUI._on_attack_change(val)
+	PlayerData.player_strength = val

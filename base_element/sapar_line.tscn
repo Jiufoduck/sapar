@@ -3,5 +3,7 @@
 [ext_resource type="Script" uid="uid://npvov4655q4p" path="res://base_element/sapar_line.gd" id="1_1n2pd"]
 
 [node name="SaparLine" type="Line2D"]
+z_index = -1
 closed = true
+width = 3.0
 script = ExtResource("1_1n2pd")
