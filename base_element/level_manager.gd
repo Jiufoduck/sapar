@@ -1,8 +1,11 @@
 extends Node2D
 
+
+@export var level_test:PackedScene
 @export var Level_start:PackedScene
-@export var level_fight:Array[PackedScene]
-var level_shop:PackedScene
+@export var level_fight_store:Array
+@export var level_fight:PackedScene
+@export var level_shop:PackedScene
 
 @onready var main = $".."
 
@@ -12,7 +15,7 @@ var now_level_index:int = 0
 var now_level:Level
 
 func _ready() -> void:
-	var level:Level = Level_start.instantiate()
+	var level:Level = level_test.instantiate()
 
 	level.connect("level_clear",_on_level_clear)
 	level.connect("spawn_enemy",main._on_spawn_enemy)
@@ -36,7 +39,7 @@ func change_level():
 		new_level = level_shop.instantiate()
 	else:
 		new_level.connect("spawn_enemy",main._on_spawn_enemy)
-		new_level = level_fight[fight_level_index].instantiate()
+#		new_level = level_fight[fight_level_index].instantiate()
 		fight_level_index += 1
 	new_level.connect("level_clear",_on_level_clear)
 	add_child(new_level)

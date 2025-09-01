@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2y0lgby32vxd"
+path="res://.godot/imported/久保直人 - ニュードンク·シティ [mqms2].mp3-6cc227145df69153530b00813d0d4624.mp3str"
+
+[deps]
+
+source_file="res://sound/久保直人 - ニュードンク·シティ [mqms2].mp3"
+dest_files=["res://.godot/imported/久保直人 - ニュードンク·シティ [mqms2].mp3-6cc227145df69153530b00813d0d4624.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

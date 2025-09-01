@@ -20,9 +20,9 @@ func initialize(text = "",text_owner:OwnerType = OwnerType.Mir) -> void:
 	var t:Tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE)
 	$text.modulate = Color(0,0,0,0)
 	$Texture.modulate = Color(0,0,0,0)
-	t.tween_property(texture,"custom_minimum_size",Vector2(60,60),0.3)
+	t.tween_property(texture,"custom_minimum_size",Vector2(47,47),0.3)
 	t.tween_property(texture,"modulate",Color.WHITE,0.3)
-	t.tween_property($text,"custom_minimum_size",Vector2(320,main_text.get_minimum_size().y + 40),0.3)
+	t.tween_property($text,"custom_minimum_size",Vector2(220,main_text.get_minimum_size().y + 40),0.3)
 	t.tween_property($text,"modulate",Color.WHITE,0.3)
 
 

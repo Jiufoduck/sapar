@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c81duw02ggbke"]
+
+[ext_resource type="Script" uid="uid://2slh4q66mr0" path="res://base_element/bullet.gd" id="1_2unot"]
+[ext_resource type="Texture2D" uid="uid://cypue5txkd1nv" path="res://pic/ballBlue_10.png" id="2_ki1bb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2unot"]
+radius = 16.0
+
+[node name="bullet" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_2unot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2unot")
+
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+shape = SubResource("CircleShape2D_2unot")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ki1bb")
+
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

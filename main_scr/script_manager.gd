@@ -4,7 +4,7 @@ signal dialogue_finished
 signal monologue_finished
 
 signal add_dialogue(path:String,is_instance:bool,is_force:bool)
-signal add_monologue(path:String,is_instance:bool,is_force:bool)
+signal add_monologue(path:Monologue,is_instance:bool,is_force:bool)
 func _on_dialogue_finished():
 	dialogue_finished.emit()
 

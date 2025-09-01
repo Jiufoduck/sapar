@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3xdao3gei5g"]
+
+[ext_resource type="Script" uid="uid://dj8agd4ltjqpr" path="res://UI/hover_reporter.gd" id="1_srynl"]
+[ext_resource type="Texture2D" uid="uid://r1hlnu5hux5f" path="res://pic/UI/plus.png" id="1_w5r6k"]
+
+[node name="HoverReporter" type="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+mouse_filter = 0
+texture = ExtResource("1_w5r6k")
+expand_mode = 1
+script = ExtResource("1_srynl")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

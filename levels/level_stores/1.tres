@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LevelStore" load_steps=2 format=3 uid="uid://v673423suj76"]
+
+[ext_resource type="Script" uid="uid://cuh27kqudtnq1" path="res://base_element/level_store.gd" id="1_ky04b"]
+
+[resource]
+script = ExtResource("1_ky04b")
+metadata/_custom_type_script = "uid://cuh27kqudtnq1"

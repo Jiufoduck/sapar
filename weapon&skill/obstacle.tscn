@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://domj3557qsa8n"]
+
+[ext_resource type="Script" uid="uid://cn2y3doq6uu15" path="res://weapon&skill/obstacle.gd" id="1_1yavj"]
+[ext_resource type="Texture2D" uid="uid://cgocxjhi0oydq" path="res://pic/obstacle.png" id="2_ep3ok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep3ok"]
+size = Vector2(144, 64)
+
+[node name="Obstacle" type="RigidBody2D"]
+collision_layer = 2147483648
+collision_mask = 0
+gravity_scale = 0.0
+sleeping = true
+script = ExtResource("1_1yavj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ep3ok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ep3ok")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

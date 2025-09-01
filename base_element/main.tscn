@@ -1,27 +1,40 @@
-[gd_scene load_steps=27 format=3 uid="uid://bmeje5gp2wvir"]
+[gd_scene load_steps=47 format=3 uid="uid://bmeje5gp2wvir"]
 
 [ext_resource type="Script" uid="uid://ct0pjsotp1kws" path="res://base_element/main.gd" id="1_1mkjp"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_1e1p8"]
 [ext_resource type="PackedScene" uid="uid://dd14e8nxealyr" path="res://base_element/sapar.tscn" id="2_8xjy2"]
-[ext_resource type="PackedScene" uid="uid://csk5occwrdvvn" path="res://enemy/walker/walker.tscn" id="3_a456m"]
+[ext_resource type="AudioStream" uid="uid://b2y0lgby32vxd" path="res://sound/久保直人 - ニュードンク·シティ [mqms2].mp3" id="2_mwhkn"]
 [ext_resource type="PackedScene" uid="uid://cd7fdo7mu62ot" path="res://base_element/player.tscn" id="3_gjn4q"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_q6855"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_1e1p8"]
 [ext_resource type="Script" uid="uid://yv2338tsraaq" path="res://base_element/level_manager.gd" id="7_ovjmg"]
 [ext_resource type="PackedScene" uid="uid://c8sh5psuo3lob" path="res://levels/level_start.tscn" id="8_ovjmg"]
-[ext_resource type="Script" uid="uid://boym1bdna7aip" path="res://dialogue/monologue_manager.gd" id="9_ja8ph"]
-[ext_resource type="Script" uid="uid://b7ul8ekvj17vi" path="res://dialogue/dialogue_manager.gd" id="10_w5ejl"]
-[ext_resource type="Texture2D" uid="uid://coxmonfpfe4bh" path="res://pic/history.png" id="11_ce18j"]
-[ext_resource type="Texture2D" uid="uid://cxy4ghexgc06t" path="res://pic/history_press.png" id="12_6tw1v"]
-[ext_resource type="Texture2D" uid="uid://cqxutpk3ccvns" path="res://pic/history_float.png" id="13_nkhoc"]
-[ext_resource type="Texture2D" uid="uid://dfv0e6do3ycd2" path="res://pic/message.png" id="14_ce18j"]
-[ext_resource type="Script" uid="uid://dueojsmqgr3wa" path="res://base_element/combat_ui.gd" id="15_pa7vq"]
+[ext_resource type="PackedScene" uid="uid://cssx5dn3te8cv" path="res://levels/level_test.tscn" id="9_vvckc"]
+[ext_resource type="Texture2D" uid="uid://csrm3ba3nny11" path="res://pic/UI/history.png" id="11_ce18j"]
+[ext_resource type="Texture2D" uid="uid://cxy4ghexgc06t" path="res://pic/UI/history_press.png" id="12_6tw1v"]
+[ext_resource type="Texture2D" uid="uid://cqxutpk3ccvns" path="res://pic/UI/history_float.png" id="13_nkhoc"]
+[ext_resource type="Texture2D" uid="uid://dfv0e6do3ycd2" path="res://pic/UI/message.png" id="14_ce18j"]
+[ext_resource type="Script" uid="uid://dueojsmqgr3wa" path="res://UI/combat_ui.gd" id="15_pa7vq"]
 [ext_resource type="Texture2D" uid="uid://b2ej5vut6yxvg" path="res://pic/HP_Bar/bg.png" id="16_1v3ad"]
-[ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/PixelBoxMonospace.ttf" id="16_ruib1"]
+[ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/UI/PixelBoxMonospace.ttf" id="16_ruib1"]
 [ext_resource type="Texture2D" uid="uid://ceyxir6p2ljg5" path="res://pic/HP_Bar/red.png" id="17_1v3ad"]
 [ext_resource type="Texture2D" uid="uid://eca7s3iia6lx" path="res://pic/HP_Bar/blue.png" id="18_ruib1"]
-[ext_resource type="Texture2D" uid="uid://befx8w411tfg" path="res://pic/attack.png" id="21_a456m"]
-[ext_resource type="Texture2D" uid="uid://dfg2sbhc2hmx2" path="res://pic/Coin.png" id="21_i1oh8"]
+[ext_resource type="Texture2D" uid="uid://befx8w411tfg" path="res://pic/UI/attack.png" id="21_a456m"]
+[ext_resource type="Texture2D" uid="uid://dfg2sbhc2hmx2" path="res://pic/UI/Coin.png" id="21_i1oh8"]
+[ext_resource type="Texture2D" uid="uid://daswcw2ilexf1" path="res://pic/UI/space.png" id="22_k0hih"]
+[ext_resource type="Texture2D" uid="uid://be2l3t0qtwdws" path="res://pic/UI/SpaceCover.png" id="23_rjgf5"]
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://pic/UI/FlatUI4/kenneyUI.tres" id="25_1u5ge"]
+[ext_resource type="Texture2D" uid="uid://bpxew6btyrwjr" path="res://pic/UI/shift.png" id="25_3ic6y"]
+[ext_resource type="Script" uid="uid://bo57l4kv278m2" path="res://UI/menu.gd" id="25_k0hih"]
+[ext_resource type="Texture2D" uid="uid://bho1n2wv87vyy" path="res://pic/UI/tab.png" id="26_08036"]
+[ext_resource type="Texture2D" uid="uid://crmlgm2osaq7d" path="res://pic/UI/ShiftCover.png" id="26_k0hih"]
+[ext_resource type="Texture2D" uid="uid://r1hlnu5hux5f" path="res://pic/UI/plus.png" id="26_mwhkn"]
+[ext_resource type="Texture2D" uid="uid://dvxwpsx10v87k" path="res://pic/UI/skill.png" id="27_rjgf5"]
+[ext_resource type="PackedScene" uid="uid://dq3xdao3gei5g" path="res://UI/hover_reporter.tscn" id="28_3ic6y"]
+[ext_resource type="Texture2D" uid="uid://dep7fhjx7yssb" path="res://pic/UI/weapon.png" id="28_ua54j"]
+[ext_resource type="Texture2D" uid="uid://b0u821f3uf6j5" path="res://pic/UI/scrolling.png" id="31_iqut0"]
+[ext_resource type="FontFile" uid="uid://dqpdeuxenyqhl" path="res://pic/SanJiYaoTiJian-2.ttf" id="31_x4tsp"]
+[ext_resource type="Texture2D" uid="uid://bjka7fc3icpsk" path="res://pic/aim_centre.png" id="34_vvckc"]
 
 [sub_resource type="Resource" id="Resource_ovjmg"]
 script = ExtResource("6_1e1p8")
@@ -29,8 +42,227 @@ duration = 1.0
 transition = 0
 ease = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08036"]
+bg_color = Color(1, 1, 1, 0.203922)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_08036"]
+font = ExtResource("16_ruib1")
+font_size = 40
+shadow_size = 0
+shadow_color = Color(1, 1, 1, 0.337255)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="GDScript" id="GDScript_thbtb"]
+script/source = "extends Node
+
+var current_monologue: Monologue = null
+var queued_monologues: Array[Monologue] = []
+var is_playing: bool = false
+var current_line_index: int = 0
+@onready var timer: Timer = $Timer
+
+func _ready() -> void:
+	ScriptManager.connect(\"add_monologue\",play_monologue)
+
+func play_monologue(monologue: Monologue, is_instance:bool, is_force:bool):
+	if is_playing:
+		if is_instance:
+			return
+		if is_force:
+			_finish_monologue(true)
+			load_monologue(monologue)
+			return
+
+		queued_monologues.append(monologue)
+		return
+	load_monologue(monologue)
+
+func load_monologue(monologue:Monologue):
+	current_monologue = monologue
+	is_playing = true
+	current_line_index = 0
+	_play_next_line()
+
+func _play_next_line():
+	if !current_monologue:
+		return
+
+	if current_line_index >= current_monologue.lines.size():
+		_finish_monologue(false)
+		return
+
+	var line = current_monologue.lines[current_line_index]
+	$Label.text = line
+
+	#animation
+	create_tween().tween_property($Label,\"modulate\",Color.WHITE,0.2)
+
+	timer.start(current_monologue.interval)
+	current_line_index += 1
+
+func _on_timer_timeout():
+	await create_tween().tween_property($Label,\"modulate\",Color(0,0,0,0),0.2).finished
+	_play_next_line()
+
+func _finish_monologue(is_force:bool):
+	is_playing = false
+	current_monologue = null
+	timer.stop()
+
+	if !is_force and queued_monologues.size() > 0:
+		ScriptManager._on_monologue_finished()
+		load_monologue(queued_monologues.pop_front())
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_ja8ph"]
 font_size = 40
+
+[sub_resource type="GDScript" id="GDScript_1u5ge"]
+script/source = "extends Control
+
+const message_scene:PackedScene = preload(\"res://dialogue/message.tscn\")
+
+@onready var his_panel = %HistoryPanel
+@onready var his_button = %History
+@onready var list = %list
+@onready var timer = %dialogue_timer
+@onready var his_scroll = %HistoryScroll
+
+
+var chat_json:Array[String]
+var current_json:String
+var chat_data = {}
+var current_message_index = 0
+
+var reaching_summit = false
+
+func _ready():
+	ScriptManager.add_dialogue.connect(add_json)
+
+
+func _process(delta: float) -> void:
+	if reaching_summit:
+		his_scroll.scroll_vertical = his_scroll.get_v_scroll_bar().max_value
+
+
+func add_json(json:String,is_instance:bool,is_force:bool):
+	if chat_json.is_empty():
+		show_history()
+		chat_json.append(json)
+		start_json()
+	else:
+		if is_instance:
+			return
+		if is_force:
+			chat_json.pop_front()
+			chat_json.insert(0, json)
+			timer.stop()
+			start_json()
+			return
+		chat_json.append(json)
+
+func start_json():
+	if chat_json.has(current_json):
+		chat_json.erase(current_json)
+	if chat_json.is_empty():
+		hide_history()
+		return
+	current_json = chat_json.front()
+	var file = FileAccess.open(current_json, FileAccess.READ)
+	chat_data = JSON.parse_string(file.get_as_text())
+	file.close()
+	current_message_index = 0
+	_send_next_message()
+
+
+func _send_next_message():
+	if current_message_index >= chat_data[\"messages\"].size():
+		ScriptManager._on_dialogue_finished()
+		timer.stop()
+		start_json()
+		return
+
+	var msg = chat_data[\"messages\"][current_message_index]
+	var sender_name = chat_data[\"participants\"][msg[\"sender\"]]
+
+	# 这里替换为实际的微信消息发送接口
+	add_history(msg[\"content\"], sender_name)
+
+	current_message_index += 1
+	if current_message_index < chat_data[\"messages\"].size():
+		timer.start(chat_data[\"messages\"][current_message_index][\"delay\"])
+
+
+
+func add_history(text,text_owner:String):
+	var ins = message_scene.instantiate()
+	list.add_child(ins)
+
+	if !his_panel.visible:
+		message_ainmation()
+	reaching_summit = true
+	if text_owner == \"Mir\":
+		await ins.initialize(text, Message.OwnerType.Mir)
+	elif text_owner == \"Zina\":
+		await ins.initialize(text, Message.OwnerType.Zina)
+
+	reaching_summit = false
+	create_tween().set_trans(Tween.TRANS_SINE).tween_property(his_scroll,\"scroll_vertical\",his_scroll.get_v_scroll_bar().max_value,0.3)
+
+var t:Tween
+func message_ainmation():
+	if t and t.is_running():
+		t.stop()
+
+	t = create_tween().set_trans(Tween.TRANS_CUBIC).set_parallel()
+	t.tween_property(%message_come,\"scale\",Vector2.ONE,0.2)
+	t.tween_property(%message_come,\"rotation\",0.3,0.1)
+	t.chain().tween_property(%message_come,\"rotation\",-0.3,0.1)
+	t.chain().tween_property(%message_come,\"rotation\",0.3,0.1)
+	t.chain().tween_property(%message_come,\"rotation\",-0.3,0.1)
+	t.chain().tween_property(%message_come,\"rotation\",0.3,0.1)
+	t.chain().tween_property(%message_come,\"rotation\",-0.3,0.1)
+	t.tween_property(%message_come,\"scale\",Vector2.ZERO,0.2)
+
+var tween:Tween
+func show_history():
+	if tween and tween.is_running():
+		tween.stop()
+	his_panel.show()
+	tween = create_tween().set_trans(Tween.TRANS_SINE).set_parallel()
+	tween.tween_property(his_panel,\"custom_minimum_size\",Vector2(300,400),0.5)
+	tween.tween_property(his_panel,\"position\",Vector2(1590.0,0),0.5)
+	tween.tween_property(his_button,\"position\",Vector2(1476.0,24.0),0.5)
+	await tween.finished
+
+
+
+func hide_history():
+	if tween and tween.is_running():
+		tween.stop()
+	tween = create_tween().set_trans(Tween.TRANS_SINE).set_parallel()
+	his_panel.custom_minimum_size = Vector2(0,400)
+	tween.tween_property(his_panel,\"size\",Vector2(0,400),0.5)
+	tween.tween_property(his_panel,\"position\",Vector2(1920,0),0.5)
+	tween.tween_property(his_button,\"position\",Vector2(1832.0,24.0),0.5)
+	await tween.finished
+	his_panel.hide()
+
+func _on_history_pressed() -> void:
+	if his_panel.visible:
+		hide_history()
+	else:
+		show_history()
+
+
+func _on_dialogue_timer_timeout() -> void:
+	_send_next_message()
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rfke"]
 bg_color = Color(0.152941, 0.152941, 0.152941, 0.811765)
@@ -42,17 +274,38 @@ shadow_color = Color(0, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_kj7ta"]
 Panel/styles/panel = SubResource("StyleBoxFlat_6rfke")
 
-[node name="main" type="Node2D" node_paths=PackedStringArray("player", "sapar", "Enemy_base")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua54j"]
+bg_color = Color(0.331019, 0.331019, 0.331019, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ic6y"]
+corner_radius_top_left = 40
+corner_radius_bottom_left = 40
+corner_detail = 20
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vvckc"]
+load_path = "res://.godot/imported/aim_round.png-e2b7f73af70d9711879cff5e0785bbe0.ctex"
+
+[node name="main" type="Node2D" node_paths=PackedStringArray("player", "sapar")]
 script = ExtResource("1_1mkjp")
 player = NodePath("Player")
 sapar = NodePath("sapar")
-Enemy_base = NodePath("enemys")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mwhkn")
 
 [node name="Camera" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(-104, 40)
 zoom = Vector2(2, 2)
 process_callback = 0
+editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera"]
 process_priority = 300
@@ -60,20 +313,20 @@ process_physics_priority = 300
 script = ExtResource("2_1e1p8")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
+[node name="Weapon&Skill" type="Node2D" parent="."]
+
+[node name="bullet" type="Node2D" parent="."]
+
 [node name="golds" type="Node2D" parent="."]
 
 [node name="enemys" type="Node2D" parent="."]
 
-[node name="Walker" parent="enemys" instance=ExtResource("3_a456m")]
-
 [node name="sapar" parent="." instance=ExtResource("2_8xjy2")]
 
 [node name="Player" parent="." instance=ExtResource("3_gjn4q")]
-position = Vector2(-104, 40)
 
 [node name="PCam" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(-104, 40)
 script = ExtResource("5_q6855")
 follow_mode = 2
 follow_target = NodePath("../Player")
@@ -81,15 +334,196 @@ zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_ovjmg")
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
+draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Level_manager" type="Node2D" parent="."]
 script = ExtResource("7_ovjmg")
+level_test = ExtResource("9_vvckc")
 Level_start = ExtResource("8_ovjmg")
 
-[node name="Dialogs" type="CanvasLayer" parent="."]
+[node name="UIs" type="CanvasLayer" parent="."]
 
-[node name="MonologueManager" type="Control" parent="Dialogs"]
+[node name="filter" type="ColorRect" parent="UIs"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="CombatUI" type="Control" parent="UIs"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("15_pa7vq")
+
+[node name="State" type="MarginContainer" parent="UIs/CombatUI"]
+layout_mode = 1
+offset_right = 516.0
+offset_bottom = 79.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIs/CombatUI/State"]
+layout_mode = 2
+
+[node name="HP" type="HBoxContainer" parent="UIs/CombatUI/State/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIs/CombatUI/State/VBoxContainer/HP"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.253843, 0.253843, 0.253843, 1)
+theme_override_fonts/font = ExtResource("16_ruib1")
+theme_override_font_sizes/font_size = 50
+text = "HP"
+
+[node name="HP" type="TextureProgressBar" parent="UIs/CombatUI/State/VBoxContainer/HP"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 10.0
+step = 0.01
+nine_patch_stretch = true
+stretch_margin_left = 150
+stretch_margin_right = 150
+texture_under = ExtResource("16_1v3ad")
+texture_progress = ExtResource("17_1v3ad")
+
+[node name="Shield" type="TextureProgressBar" parent="UIs/CombatUI/State/VBoxContainer/HP"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+max_value = 4.0
+step = 0.01
+nine_patch_stretch = true
+stretch_margin_left = 40
+stretch_margin_right = 40
+texture_under = ExtResource("16_1v3ad")
+texture_progress = ExtResource("18_ruib1")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="Gold" type="HBoxContainer" parent="UIs/CombatUI/State/VBoxContainer"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="UIs/CombatUI/State/VBoxContainer/Gold"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("21_i1oh8")
+expand_mode = 1
+
+[node name="gold_aomout" type="Label" parent="UIs/CombatUI/State/VBoxContainer/Gold"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_ruib1")
+theme_override_font_sizes/font_size = 60
+text = "0"
+
+[node name="Attack" type="HBoxContainer" parent="UIs/CombatUI/State/VBoxContainer"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="UIs/CombatUI/State/VBoxContainer/Attack"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("21_a456m")
+stretch_mode = 3
+
+[node name="Attack_amount" type="Label" parent="UIs/CombatUI/State/VBoxContainer/Attack"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_ruib1")
+theme_override_font_sizes/font_size = 60
+text = "2"
+
+[node name="cooldown" type="Panel" parent="UIs/CombatUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.745
+anchor_right = 0.127
+anchor_bottom = 0.932
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_08036")
+
+[node name="VBox" type="VBoxContainer" parent="UIs/CombatUI/cooldown"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Weapon" type="HBoxContainer" parent="UIs/CombatUI/cooldown/VBox"]
+layout_mode = 2
+
+[node name="WeaponIcon" type="TextureRect" parent="UIs/CombatUI/cooldown/VBox/Weapon"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("26_mwhkn")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="WeaponProgress" type="TextureProgressBar" parent="UIs/CombatUI/cooldown/VBox/Weapon"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+fill_mode = 1
+stretch_margin_left = 100
+stretch_margin_top = 50
+texture_under = ExtResource("22_k0hih")
+texture_progress = ExtResource("23_rjgf5")
+
+[node name="Skill" type="HBoxContainer" parent="UIs/CombatUI/cooldown/VBox"]
+layout_mode = 2
+
+[node name="SkillIcon" type="TextureRect" parent="UIs/CombatUI/cooldown/VBox/Skill"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("26_mwhkn")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="SkillProgress" type="TextureProgressBar" parent="UIs/CombatUI/cooldown/VBox/Skill"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+fill_mode = 1
+texture_under = ExtResource("25_3ic6y")
+texture_progress = ExtResource("26_k0hih")
+
+[node name="tip" type="HBoxContainer" parent="UIs/CombatUI/cooldown/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UIs/CombatUI/cooldown/VBox/tip"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " MENU"
+label_settings = SubResource("LabelSettings_08036")
+
+[node name="TextureRect" type="TextureRect" parent="UIs/CombatUI/cooldown/VBox/tip"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+texture = ExtResource("26_08036")
+expand_mode = 1
+
+[node name="MonologueManager" type="Control" parent="UIs"]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -98,9 +532,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("9_ja8ph")
+script = SubResource("GDScript_thbtb")
 
-[node name="Label" type="Label" parent="Dialogs/MonologueManager"]
+[node name="Label" type="Label" parent="UIs/MonologueManager"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -115,10 +549,10 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_ja8ph")
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="Dialogs/MonologueManager"]
+[node name="Timer" type="Timer" parent="UIs/MonologueManager"]
 one_shot = true
 
-[node name="DialogueManager" type="Control" parent="Dialogs"]
+[node name="DialogueManager" type="Control" parent="UIs"]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -127,21 +561,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("10_w5ejl")
+script = SubResource("GDScript_1u5ge")
 
-[node name="HistoryPanel" type="Panel" parent="Dialogs/DialogueManager"]
+[node name="HistoryPanel" type="Panel" parent="UIs/DialogueManager"]
 unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(400, 500)
+clip_contents = true
+custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 offset_left = 1920.0
-offset_right = 1920.0
+offset_right = 2220.0
+offset_bottom = 400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme = SubResource("Theme_kj7ta")
 
-[node name="MarginContainer" type="MarginContainer" parent="Dialogs/DialogueManager/HistoryPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UIs/DialogueManager/HistoryPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,19 +589,19 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="HistoryScroll" type="ScrollContainer" parent="Dialogs/DialogueManager/HistoryPanel/MarginContainer"]
+[node name="HistoryScroll" type="ScrollContainer" parent="UIs/DialogueManager/HistoryPanel/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="list" type="VBoxContainer" parent="Dialogs/DialogueManager/HistoryPanel/MarginContainer/HistoryScroll"]
+[node name="list" type="VBoxContainer" parent="UIs/DialogueManager/HistoryPanel/MarginContainer/HistoryScroll"]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 alignment = 2
 
-[node name="History" type="TextureButton" parent="Dialogs/DialogueManager"]
+[node name="History" type="TextureButton" parent="UIs/DialogueManager"]
 unique_name_in_owner = true
 self_modulate = Color(0.340339, 0.340339, 0.340339, 1)
 layout_mode = 0
@@ -174,11 +609,12 @@ offset_left = 1832.0
 offset_top = 24.0
 offset_right = 1899.0
 offset_bottom = 92.0
+focus_mode = 0
 texture_normal = ExtResource("11_ce18j")
 texture_pressed = ExtResource("12_6tw1v")
 texture_hover = ExtResource("13_nkhoc")
 
-[node name="message_come" type="TextureRect" parent="Dialogs/DialogueManager/History"]
+[node name="message_come" type="TextureRect" parent="UIs/DialogueManager/History"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -72.0
@@ -189,10 +625,10 @@ scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("14_ce18j")
 flip_h = true
 
-[node name="dialogue_timer" type="Timer" parent="Dialogs/DialogueManager"]
+[node name="dialogue_timer" type="Timer" parent="UIs/DialogueManager"]
 unique_name_in_owner = true
 
-[node name="CombatUI" type="Control" parent="Dialogs"]
+[node name="Menu" type="Control" parent="UIs"]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -201,106 +637,339 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("15_pa7vq")
+script = ExtResource("25_k0hih")
 
-[node name="State" type="MarginContainer" parent="Dialogs/CombatUI"]
+[node name="ColorRect" type="ColorRect" parent="UIs/Menu"]
 layout_mode = 1
-offset_right = 516.0
-offset_bottom = 79.0
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 50
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialogs/CombatUI/State"]
+[node name="Panel" type="Panel" parent="UIs/Menu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104
+anchor_top = 0.093
+anchor_right = 0.9
+anchor_bottom = 0.907
+offset_left = 0.319992
+offset_top = -0.440002
+offset_right = -8.00012
+offset_bottom = 0.439941
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("25_1u5ge")
+
+[node name="TabContainer" type="TabContainer" parent="UIs/Menu/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("25_1u5ge")
+tab_alignment = 1
+current_tab = 0
+tab_focus_mode = 0
+
+[node name="Skill&Weapon" type="Control" parent="UIs/Menu/Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left" type="Panel" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ua54j")
+
+[node name="load_skill" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left" instance=ExtResource("28_3ic6y")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 488.0
+offset_top = 163.0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("27_rjgf5")
+
+[node name="skill_owned" type="MarginContainer" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 560.0
+grow_vertical = 0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="skills" type="HBoxContainer" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="skill1" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills" instance=ExtResource("28_3ic6y")]
 layout_mode = 2
 
-[node name="HP" type="HBoxContainer" parent="Dialogs/CombatUI/State/VBoxContainer"]
+[node name="skill2" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills" instance=ExtResource("28_3ic6y")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Dialogs/CombatUI/State/VBoxContainer/HP"]
+[node name="skill3" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills" instance=ExtResource("28_3ic6y")]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.253843, 0.253843, 0.253843, 1)
-theme_override_fonts/font = ExtResource("16_ruib1")
+
+[node name="Label" type="Label" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 101.0
+offset_right = 639.0
+offset_bottom = 158.0
 theme_override_font_sizes/font_size = 50
-text = "HP"
+text = "Skill"
 
-[node name="HP" type="TextureProgressBar" parent="Dialogs/CombatUI/State/VBoxContainer/HP"]
+[node name="right" type="Panel" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ua54j")
+
+[node name="load_weapon" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right" instance=ExtResource("28_3ic6y")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 163.0
+offset_top = 163.0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("28_ua54j")
+
+[node name="weapon_owned" type="MarginContainer" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="weapons" type="HBoxContainer" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned"]
 unique_name_in_owner = true
 layout_mode = 2
-max_value = 10.0
-step = 0.01
-nine_patch_stretch = true
-stretch_margin_left = 150
-stretch_margin_right = 150
-texture_under = ExtResource("16_1v3ad")
-texture_progress = ExtResource("17_1v3ad")
+theme_override_constants/separation = 30
 
-[node name="Shield" type="TextureProgressBar" parent="Dialogs/CombatUI/State/VBoxContainer/HP"]
+[node name="weapon1" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons" instance=ExtResource("28_3ic6y")]
+layout_mode = 2
+
+[node name="weapon2" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons" instance=ExtResource("28_3ic6y")]
+layout_mode = 2
+
+[node name="weapon3" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons" instance=ExtResource("28_3ic6y")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 101.0
+offset_right = 348.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 50
+text = "Weapon"
+
+[node name="explination" type="Label" parent="UIs/Menu/Panel/TabContainer/Skill&Weapon"]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.9999
+offset_top = -75.9999
+offset_right = 16.0001
+offset_bottom = -40.9999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("31_x4tsp")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="equipment" type="Control" parent="UIs/Menu/Panel/TabContainer"]
 visible = false
 layout_mode = 2
-max_value = 2.0
-step = 0.01
-nine_patch_stretch = true
-stretch_margin_left = 40
-stretch_margin_right = 40
-texture_under = ExtResource("16_1v3ad")
-texture_progress = ExtResource("18_ruib1")
-tint_progress = Color(0, 1, 0, 1)
+metadata/_tab_index = 1
 
-[node name="Gold" type="HBoxContainer" parent="Dialogs/CombatUI/State/VBoxContainer"]
-layout_mode = 2
+[node name="owned_loot" type="Panel" parent="UIs/Menu/Panel/TabContainer/equipment"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="icon" type="TextureRect" parent="Dialogs/CombatUI/State/VBoxContainer/Gold"]
-custom_minimum_size = Vector2(80, 80)
+[node name="ScrollContainer" type="ScrollContainer" parent="UIs/Menu/Panel/TabContainer/equipment/owned_loot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="loots_root" type="HFlowContainer" parent="UIs/Menu/Panel/TabContainer/equipment/owned_loot/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("21_i1oh8")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="UIs/Menu/Panel/TabContainer/equipment/owned_loot"]
+modulate = Color(1, 1, 1, 0.498039)
+custom_minimum_size = Vector2(50, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.802
+anchor_top = 0.185
+anchor_right = 0.802
+anchor_bottom = 0.185
+texture = ExtResource("31_iqut0")
 expand_mode = 1
 
-[node name="gold_aomout" type="Label" parent="Dialogs/CombatUI/State/VBoxContainer/Gold"]
+[node name="loaded_loot" type="HBoxContainer" parent="UIs/Menu/Panel/TabContainer/equipment"]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("16_ruib1")
-theme_override_font_sizes/font_size = 60
-text = "0"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.15
+grow_horizontal = 2
+theme_override_constants/separation = 150
+alignment = 1
 
-[node name="Attack" type="HBoxContainer" parent="Dialogs/CombatUI/State/VBoxContainer"]
+[node name="equipment1" parent="UIs/Menu/Panel/TabContainer/equipment/loaded_loot" instance=ExtResource("28_3ic6y")]
 layout_mode = 2
 
-[node name="icon" type="TextureRect" parent="Dialogs/CombatUI/State/VBoxContainer/Attack"]
-custom_minimum_size = Vector2(80, 80)
+[node name="equipment2" parent="UIs/Menu/Panel/TabContainer/equipment/loaded_loot" instance=ExtResource("28_3ic6y")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 0.0
-texture = ExtResource("21_a456m")
-stretch_mode = 3
 
-[node name="Attack_amount" type="Label" parent="Dialogs/CombatUI/State/VBoxContainer/Attack"]
+[node name="equipment3" parent="UIs/Menu/Panel/TabContainer/equipment/loaded_loot" instance=ExtResource("28_3ic6y")]
+layout_mode = 2
+
+[node name="EquipmentExplination" type="Label" parent="UIs/Menu/Panel/TabContainer/equipment"]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("16_ruib1")
-theme_override_font_sizes/font_size = 60
-text = "2"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.967
+anchor_right = 0.5
+anchor_bottom = 0.967
+offset_left = -29.0
+offset_top = -43.0
+offset_right = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("31_x4tsp")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="cooldown" type="MarginContainer" parent="Dialogs/CombatUI"]
+[node name="setting" type="Control" parent="UIs/Menu/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UIs/Menu/Panel/TabContainer/setting"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
 
-[node name="Menu" type="Control" parent="Dialogs"]
+[node name="volumn" type="HBoxContainer" parent="UIs/Menu/Panel/TabContainer/setting/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIs/Menu/Panel/TabContainer/setting/MarginContainer/volumn"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "master volumn"
+
+[node name="master_volumn" type="HSlider" parent="UIs/Menu/Panel/TabContainer/setting/MarginContainer/volumn"]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(670, 50)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3ic6y")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3ic6y")
+min_value = -60.0
+max_value = 20.0
 
 [node name="ShieldRecoverTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 
+[node name="mouse" type="Node2D" parent="."]
+
+[node name="center" type="Sprite2D" parent="mouse"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("34_vvckc")
+
+[node name="round" type="Sprite2D" parent="mouse"]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_vvckc")
+
+[connection signal="black_hole" from="Player" to="." method="attract_object"]
+[connection signal="pause_overed" from="Player" to="." method="_on_player_pause_overed"]
+[connection signal="paused" from="Player" to="." method="_on_player_paused"]
+[connection signal="set_dash_line" from="Player" to="." method="_on_player_set_dash_line"]
+[connection signal="set_obstacle" from="Player" to="." method="_on_player_set_obstacle"]
+[connection signal="shoot_grapple" from="Player" to="." method="shoot_grapple"]
+[connection signal="shoot_trumpet" from="Player" to="." method="_on_player_shoot_trumpet"]
 [connection signal="take_damage" from="Player" to="." method="_on_player_take_damage"]
 [connection signal="take_gold" from="Player" to="." method="_on_player_take_gold"]
-[connection signal="timeout" from="Dialogs/MonologueManager/Timer" to="Dialogs/MonologueManager" method="_on_timer_timeout"]
-[connection signal="pressed" from="Dialogs/DialogueManager/History" to="Dialogs/DialogueManager" method="_on_history_pressed"]
-[connection signal="timeout" from="Dialogs/DialogueManager/dialogue_timer" to="Dialogs/DialogueManager" method="_on_dialogue_timer_timeout"]
+[connection signal="mouse_entered" from="UIs/CombatUI" to="." method="_on_combat_ui_mouse_entered"]
+[connection signal="mouse_exited" from="UIs/CombatUI" to="." method="_on_combat_ui_mouse_exited"]
+[connection signal="timeout" from="UIs/MonologueManager/Timer" to="UIs/MonologueManager" method="_on_timer_timeout"]
+[connection signal="pressed" from="UIs/DialogueManager/History" to="UIs/DialogueManager" method="_on_history_pressed"]
+[connection signal="timeout" from="UIs/DialogueManager/dialogue_timer" to="UIs/DialogueManager" method="_on_dialogue_timer_timeout"]
+[connection signal="tab_clicked" from="UIs/Menu/Panel/TabContainer" to="UIs/Menu" method="_on_tab_container_tab"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/load_skill" to="UIs/Menu" method="_on_load_skill_hovered"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills/skill1" to="UIs/Menu" method="_on_skill_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills/skill1" to="UIs/Menu" method="_on_skill_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills/skill2" to="UIs/Menu" method="_on_skill_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills/skill2" to="UIs/Menu" method="_on_skill_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills/skill3" to="UIs/Menu" method="_on_skill_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/left/skill_owned/skills/skill3" to="UIs/Menu" method="_on_skill_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/load_weapon" to="UIs/Menu" method="_on_load_weapon_hovered"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons/weapon1" to="UIs/Menu" method="_on_weapon_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons/weapon1" to="UIs/Menu" method="_on_weapon_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons/weapon2" to="UIs/Menu" method="_on_weapon_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons/weapon2" to="UIs/Menu" method="_on_weapon_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons/weapon3" to="UIs/Menu" method="_on_weapon_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/Skill&Weapon/HBoxContainer/right/weapon_owned/weapons/weapon3" to="UIs/Menu" method="_on_weapon_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/equipment/loaded_loot/equipment1" to="UIs/Menu" method="_on_equipment_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/equipment/loaded_loot/equipment1" to="UIs/Menu" method="_on_equipment_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/equipment/loaded_loot/equipment2" to="UIs/Menu" method="_on_equipment_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/equipment/loaded_loot/equipment2" to="UIs/Menu" method="_on_equipment_select"]
+[connection signal="hovered" from="UIs/Menu/Panel/TabContainer/equipment/loaded_loot/equipment3" to="UIs/Menu" method="_on_equipment_hovered"]
+[connection signal="select" from="UIs/Menu/Panel/TabContainer/equipment/loaded_loot/equipment3" to="UIs/Menu" method="_on_equipment_select"]
+[connection signal="value_changed" from="UIs/Menu/Panel/TabContainer/setting/MarginContainer/volumn/master_volumn" to="UIs/Menu" method="_on_master_volumn_value_changed"]
 [connection signal="timeout" from="ShieldRecoverTimer" to="." method="_on_shield_recover_timer_timeout"]

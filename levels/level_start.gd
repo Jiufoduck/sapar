@@ -11,12 +11,10 @@ var enemies_index = 0
 
 
 func _ready() -> void:
-
-	await get_tree().create_timer(0.1).timeout
-
+	await get_tree().create_timer(1.0).timeout
 	ScriptManager._send_dialogue("res://dialogue/dialogue_jsons/start/start1.json",false,false)
 
-	script_timer.start(7)#7
+	script_timer.start(11)#7
 	await script_timer.timeout
 	PlayerData.initialize_combat_ui()
 	PlayerData.set_sapar([100])
@@ -30,6 +28,10 @@ func _ready() -> void:
 
 	ScriptManager._send_monologue("res://dialogue/monologue_resource/start/start1.tres",false,false)
 
+	script_timer.start(20)
+	await script_timer.timeout
+	if script_timer.wait_time == 20:
+		ScriptManager._send_dialogue("res://dialogue/dialogue_jsons/start/start_incase.json",true,false)
 
 
 func load_turn_enemy() -> bool:
@@ -55,6 +57,7 @@ func _on_enemy_dead(obj):
 
 func _level_clear():
 	if enemies_index == 1:
+		create_tween().tween_property($tip,"modulate",Color.TRANSPARENT,1.0)
 		ScriptManager._send_dialogue("res://dialogue/dialogue_jsons/start/start2.json",false,true)
 		script_timer.start(5)
 		await script_timer.timeout

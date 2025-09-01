@@ -5,8 +5,8 @@
   },
   "messages": [
 	{"sender": "2", "content": "喂……喂？连上了吗？", "delay": 5},
-	{"sender": "2", "content": "呼～总算把你拉进来了", "delay": 2},
-	{"sender": "2", "content": "来吧，新手教学在等着你", "delay": 2},
+	{"sender": "2", "content": "呼～总算把你拉进来了", "delay": 4},
+	{"sender": "2", "content": "来吧，新手教学在等着你", "delay": 4},
 	{"sender": "2", "content": "看到那条白色的线了吗？那就是你的诅咒，你要靠这个保卫你的业主", "delay": 3},
 	{"sender": "1", "content": "业主个蛋啊你怎么不当保安", "delay": 2},
 	{"sender": "2", "content": "哈哈哈哈哈哈", "delay": 1},

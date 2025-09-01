@@ -1,7 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8t4wbsugmypg"]
 
 [ext_resource type="Script" uid="uid://ba1tjh5675ya4" path="res://dialogue/message.gd" id="1_05oai"]
-[ext_resource type="LabelSettings" uid="uid://c7q5ss1kac163" path="res://dialogue/MessageFont.tres" id="2_v5k7t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5k7t"]
 bg_color = Color(0.676879, 0.676879, 0.676879, 0.466667)
@@ -13,7 +12,10 @@ corner_detail = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_v5k7t"]
 font_size = 20
-font_color = Color(0.821789, 0.821789, 0.821789, 1)
+font_color = Color(0.823529, 0.823529, 0.823529, 0.458824)
+
+[sub_resource type="LabelSettings" id="LabelSettings_05oai"]
+font_size = 20
 
 [node name="Message" type="HBoxContainer"]
 anchors_preset = 15
@@ -24,27 +26,29 @@ grow_vertical = 2
 script = ExtResource("1_05oai")
 
 [node name="text" type="Panel" parent="."]
-custom_minimum_size = Vector2(320, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v5k7t")
 
 [node name="name" type="Label" parent="text"]
-custom_minimum_size = Vector2(320, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-offset_right = 320.0
-offset_bottom = 28.0
+offset_left = 10.0
+offset_right = 210.0
+offset_bottom = 59.0
 size_flags_vertical = 1
 label_settings = SubResource("LabelSettings_v5k7t")
 autowrap_mode = 3
 
 [node name="text" type="Label" parent="text"]
-custom_minimum_size = Vector2(320, 300)
+custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
+offset_left = 10.0
 offset_top = 32.0
-offset_right = 320.0
+offset_right = 210.0
 offset_bottom = 332.0
 size_flags_vertical = 8
-label_settings = ExtResource("2_v5k7t")
+label_settings = SubResource("LabelSettings_05oai")
 autowrap_mode = 1
 
 [node name="Texture" type="TextureRect" parent="."]

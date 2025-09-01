@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5qdfsy5yq6u5"]
+
+[ext_resource type="Script" uid="uid://lrosiaac0qoh" path="res://weapon&skill/attract_effect.gd" id="1_vjoa8"]
+
+[node name="AttractEffect" type="Line2D"]
+closed = true
+width = 50.0
+script = ExtResource("1_vjoa8")

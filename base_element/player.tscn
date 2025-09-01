@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd7fdo7mu62ot"]
+[gd_scene load_steps=10 format=3 uid="uid://cd7fdo7mu62ot"]
 
 [ext_resource type="Script" uid="uid://lm74elli87dy" path="res://base_element/player.gd" id="1_bdso4"]
 [ext_resource type="Texture2D" uid="uid://pf2tb23juulw" path="res://pic/_Assets/Basic Charakter Spritesheet.png" id="2_bdso4"]
+[ext_resource type="Texture2D" uid="uid://daswcw2ilexf1" path="res://pic/UI/space.png" id="3_gbf32"]
+[ext_resource type="PackedScene" uid="uid://c5qdfsy5yq6u5" path="res://weapon&skill/attract_effect.tscn" id="4_nl50b"]
+[ext_resource type="Script" uid="uid://cn70mapcttg1m" path="res://weapon&skill/pause_effect.gd" id="5_errtu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddwvm"]
 radius = 12.0
@@ -48,6 +51,11 @@ _data = {
 collision_mask = 2147483648
 motion_mode = 1
 script = ExtResource("1_bdso4")
+grab_velocity = 1000
+grab_time = 3
+grab_dece_time = 0.8
+trumpet_strength = 500
+hole_strength = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ddwvm")
@@ -73,15 +81,62 @@ hframes = 4
 vframes = 4
 frame = 4
 
+[node name="chain" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
 [node name="HitCDTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="PauseTimer" type="Timer" parent="."]
 
 [node name="hitanimation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_ddwvm")
 }
 
+[node name="CancelTip" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 16.0
+offset_right = 8.0
+offset_bottom = 56.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CancelTip"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 68.0
+offset_bottom = 59.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 30
+text = "取消"
+
+[node name="TextureRect" type="TextureRect" parent="CancelTip"]
+custom_minimum_size = Vector2(40, 15)
+layout_mode = 2
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 31.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_gbf32")
+expand_mode = 1
+
+[node name="AttractEffect" parent="." instance=ExtResource("4_nl50b")]
+default_color = Color(0, 0, 0, 1)
+script = ExtResource("5_errtu")
+
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_entered" from="GoldBox" to="." method="_on_gold_box_body_entered"]
 [connection signal="timeout" from="HitCDTimer" to="." method="_on_hit_cd_timer_timeout"]
+[connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://byerh4fywwo4a"]
+
+[ext_resource type="Script" uid="uid://ct4iyxl2myavk" path="res://weapon&skill/dash_line.gd" id="1_y3b7n"]
+[ext_resource type="Shader" uid="uid://7yj1ugrunlhi" path="res://pic/virtual_edge.gdshader" id="2_1ydcq"]
+[ext_resource type="Texture2D" uid="uid://doq2crxxihjik" path="res://pic/dash_line.png" id="2_uwxa5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu056"]
+size = Vector2(150, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ppcf"]
+shader = ExtResource("2_1ydcq")
+shader_parameter/speed = 0.2
+
+[node name="DashLine" type="Area2D"]
+collision_layer = 0
+collision_mask = 7
+script = ExtResource("1_y3b7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bu056")
+
+[node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_5ppcf")
+points = PackedVector2Array(0, 0, 0, 0)
+width = 150.0
+texture = ExtResource("2_uwxa5")
+texture_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+shape = SubResource("RectangleShape2D_bu056")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
+[connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]

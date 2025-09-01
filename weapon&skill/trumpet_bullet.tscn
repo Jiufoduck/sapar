@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4m8b7wsmcx7p"]
+
+[ext_resource type="PackedScene" uid="uid://c81duw02ggbke" path="res://base_element/bullet.tscn" id="1_pjjby"]
+[ext_resource type="Script" uid="uid://6vd4onls06eo" path="res://weapon&skill/trumpet_bullet.gd" id="2_hlfdu"]
+
+[node name="bullet" instance=ExtResource("1_pjjby")]
+collision_layer = 0
+script = ExtResource("2_hlfdu")
+
+[node name="Area" parent="." index="1"]
+collision_mask = 2147483650

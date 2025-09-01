@@ -3,12 +3,10 @@ class_name Walker
 
 signal hurt
 
-var damp = 1.1
 var heal_strength = 1
 @onready var HpBar = %HP
 
 @export var recover_interval = 2.0
-
 
 
 
@@ -34,17 +32,16 @@ func spawn():
 	$heal.wait_time = recover_interval
 
 func _physics_process(delta: float) -> void:
-	velocity /= damp
 	super(delta)
 	move_and_slide()
 
 var repulsion_strength = 100
-func take_damage(count:int):
+func take_damage(count:int,type:String):
 	$heal.start()
 	if current_state == State.Idle:
-		velocity = (position - PlayerData.player_pos).normalized() * repulsion_strength
+		vel += (position - PlayerData.player_pos).normalized() * repulsion_strength
 		damp = 1.1
-	super(count)
+	super(count,type)
 
 
 

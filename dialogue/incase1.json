@@ -1,0 +1,11 @@
+{
+  "participants": {
+	"1": "Mir",
+	"2": "Zina"
+  },
+  "messages": [
+	{"sender": "2", "content": "喂，米尔，我做的游戏也要作弊吗", "delay": 3},
+	{"sender": "1", "content": "我……我没有！", "delay": 2}
+
+  ]
+}

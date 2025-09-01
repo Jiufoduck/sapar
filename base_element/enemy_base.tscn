@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://duj45fjoys5l"]
 
 [ext_resource type="Script" uid="uid://d3wnj3j72sq6k" path="res://base_element/enemy_base.gd" id="1_6emem"]
-[ext_resource type="PackedScene" uid="uid://dcqcu5auaskns" path="res://base_element/jump_count_conponent.tscn" id="2_yqjrs"]
-[ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/PixelBoxMonospace.ttf" id="3_f3d6x"]
+[ext_resource type="PackedScene" uid="uid://dcqcu5auaskns" path="res://UI/jump_count_conponent.tscn" id="2_yqjrs"]
+[ext_resource type="FontFile" uid="uid://buxcof55x5k4x" path="res://pic/UI/PixelBoxMonospace.ttf" id="3_f3d6x"]
 [ext_resource type="Texture2D" uid="uid://ygleyqfpbpug" path="res://pic/_Assets/HPBarOut.png" id="4_6egq7"]
-[ext_resource type="Script" uid="uid://d2jv3b3goxe86" path="res://base_element/Enemy_hp.gd" id="4_pn6c2"]
+[ext_resource type="Script" uid="uid://d2jv3b3goxe86" path="res://UI/Enemy_hp.gd" id="4_pn6c2"]
 [ext_resource type="Texture2D" uid="uid://dteexjwjlq001" path="res://pic/_Assets/HPBarIn.png" id="5_3lhq3"]
 [ext_resource type="Texture2D" uid="uid://c2rorixtqany8" path="res://pic/caution.png" id="7_3lhq3"]
 
@@ -18,6 +18,7 @@ script = ExtResource("1_6emem")
 scale = Vector2(1e-05, 1e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+disabled = true
 
 [node name="JumpCountConponent" parent="." instance=ExtResource("2_yqjrs")]
 offset_left = -20.0

@@ -32,8 +32,10 @@ texture = ExtResource("2_c7602")
 shape = SubResource("CircleShape2D_ld2nx")
 
 [node name="JumpCountConponent" parent="." index="2"]
-offset_left = 0.0
-offset_bottom = 0.0
+offset_left = 11.0
+offset_top = -42.0
+offset_right = 31.0
+offset_bottom = -18.0
 
 [node name="heal" type="Timer" parent="." index="3"]
 wait_time = 2.0
